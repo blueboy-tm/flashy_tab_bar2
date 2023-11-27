@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 /// The tabs are individually titled and, when tapped, switch to that tab.
 class FlashyTabBar extends StatelessWidget {
   FlashyTabBar({
-    Key? key,
-    this.selectedIndex = 0,
+    super.key,
+    this.selectedIndex,
     this.height = 60,
     this.showElevation = true,
     this.iconSize = 20,
@@ -24,7 +24,7 @@ class FlashyTabBar extends StatelessWidget {
     ],
     required this.items,
     required this.onItemSelected,
-  }) : super(key: key) {
+  }) {
     assert(height >= 55 && height <= 100);
     assert(items.length >= 2 && items.length <= 5);
     assert(iconSize >= 15 && iconSize <= 50);
@@ -37,14 +37,14 @@ class FlashyTabBar extends StatelessWidget {
   final double iconSize;
   final List<FlashyTabBarItem> items;
   final ValueChanged<int> onItemSelected;
-  final int selectedIndex;
+  final int? selectedIndex;
   final List<BoxShadow> shadows;
   final bool showElevation;
 
   @override
   Widget build(BuildContext context) {
     final bg = (backgroundColor == null)
-        ? Theme.of(context).bottomAppBarColor
+        ? Theme.of(context).bottomAppBarTheme.color
         : backgroundColor;
 
     return Container(
