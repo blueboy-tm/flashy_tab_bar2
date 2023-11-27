@@ -44,7 +44,7 @@ class FlashyTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bg = (backgroundColor == null)
-        ? Theme.of(context).bottomAppBarTheme.color
+        ? Theme.of(context).bottomNavigationBarTheme.backgroundColor
         : backgroundColor;
 
     return Container(
