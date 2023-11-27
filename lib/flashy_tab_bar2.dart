@@ -25,7 +25,7 @@ class FlashyTabBar extends StatelessWidget {
     required this.items,
     required this.onItemSelected,
   }) {
-    assert(height >= 55 && height <= 100);
+    assert(height >= 40 && height <= 100);
     assert(items.length >= 2 && items.length <= 5);
     assert(iconSize >= 15 && iconSize <= 50);
   }
